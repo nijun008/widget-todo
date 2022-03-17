@@ -6,13 +6,13 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/App.vue'),
-      name: 'MyLib',
+      entry: path.resolve(__dirname, 'src/FirstWidget.vue'),
+      name: 'FirstWidget',
       formats: ['umd'],
-      fileName: 'widget-demo'
+      fileName: '[name]'
     },
     rollupOptions: {
-      external: ['vue'],
+      external: ['vue', 'naive-ui'],
       output: {
         globals: {
           vue: 'Vue'
