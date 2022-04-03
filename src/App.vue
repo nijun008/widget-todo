@@ -1,14 +1,8 @@
 <template>
-  <div>{{ msg }}</div>
+  <Index />
 </template>
 
-<script>
+<script setup>
 import { defineComponent, ref } from 'vue'
-export default defineComponent({
-  setup() {
-    const msg = ref('hollo wwww')
-
-    return { msg }
-  }
-})
+import Index from './Index.vue'
 </script>

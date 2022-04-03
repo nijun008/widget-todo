@@ -11,11 +11,12 @@ export default defineConfig(({ mode }) => {
 
   if (isProd) {
     build = {
+      cssCodeSplit: true,
       lib: {
-        entry: resolve(__dirname, 'src/FirstWidget.vue'),
-        name: 'FirstWidget',
+        entry: resolve(__dirname, 'src/Index.vue'),
+        name: 'WidgetTodo',
         formats: ['umd'],
-        fileName: '[name]'
+        fileName: 'WidgetTodo'
       },
       rollupOptions: {
         external: ['vue', 'naive-ui'],
