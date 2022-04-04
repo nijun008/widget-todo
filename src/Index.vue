@@ -2,6 +2,7 @@
   <div class="widget-todo">
     <TodoForm />
     <TodoList :todoList="state.todoList" />
+    <TodoStatistics :todoList="state.todoList" />
   </div>
 </template>
 
@@ -9,6 +10,7 @@
 import { reactive, provide, watch, onMounted } from 'vue'
 import TodoList from './components/TodoList.vue'
 import TodoForm from './components/TodoForm.vue'
+import TodoStatistics from './components/TodoStatistics.vue'
 
 const state = reactive({
   todoList: []
@@ -37,6 +39,10 @@ provide('addTodo', (todo) => {
 
 provide('deleteTodo', index => {
   state.todoList.splice(index, 1)
+})
+
+provide('cleanCompleted', () => {
+  state.todoList = state.todoList.filter(item => !item.isCompleted)
 })
 
 </script>

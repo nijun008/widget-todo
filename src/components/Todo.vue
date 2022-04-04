@@ -1,13 +1,13 @@
 <template>
-  <li class="todo-item" :class="{ completed : props.todo.isCompleted }">
+  <li class="todo-item flex middle" :class="{ completed : props.todo.isCompleted }">
 
     <n-checkbox :checked="props.todo.isCompleted" @update:checked="checkedChange" />
 
-    <span class="todo-label">{{ todo.title }}</span>
+    <div class="todo-label grow">{{ todo.title }}</div>
 
     <n-popconfirm @positive-click="deleteHandle">
       <template #trigger>
-        <n-button quaternary type="warning">删除</n-button>
+        <n-button size="small" quaternary type="warning">删除</n-button>
       </template>
       是否要删除？
     </n-popconfirm>
